@@ -1,0 +1,72 @@
+.page-menu {
+    background-color: getcolor('menu-bg');
+    border-bottom: 1px solid #e4e8ee;
+}
+
+.logo-grid {
+    padding: 24px 15px;
+    @include flex(space-between, center, none);
+    font-weight: 500;
+    color: getcolor('menu');
+
+    &__item {
+        @include flex(none, center, 93px);
+    }
+    &__link {
+        @extend %link;
+        font-family: $logo-font-family;
+        font-weight: $menu-font-weight;
+        font-size: $logo-font-size;
+        line-height: $logo-line-height;
+    }
+    &__link:hover,
+    &__link:focus {
+        color: getcolor('backlight');
+    }
+
+    &__text {
+        color: getcolor('backlight');
+    }
+}
+
+.nav-grid {
+    @include flex(none, center, 46px);
+    list-style: none;
+    &__link {
+        @extend %link;
+        position: relative;
+        &:hover,
+        &:focus {
+            color: getcolor('backlight');
+        }
+        &:hover::after,
+        &:focus::after {
+            @extend %link-active;
+        }
+    }
+}
+.active {
+    position: relative;
+    color: getcolor('backlight');
+    &:after {
+        @extend %link-active;
+    }
+}
+.contacts {
+    @include flex(none, center, 30px);
+    list-style: none;
+    &__item {
+        color: getcolor('contacts');
+    }
+    &__link {
+        @extend %link;
+        @include flex(none, center, 10px);
+        &:hover,
+        &:focus {
+            color: getcolor('backlight');
+        }
+    }
+    &__icon {
+        @extend %icon;
+    }
+}

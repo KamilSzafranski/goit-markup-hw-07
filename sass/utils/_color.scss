@@ -1,0 +1,37 @@
+$colors: (
+    'btn-bg': #2196f3,
+    'btn': #fff,
+    'filters-btn': #000,
+    'filters-btn-bg': #f5f4fa,
+    'icon': #757575,
+    'client-icon-border': #afb1b8,
+    'backlight': #2196f3,
+    'menu-bg': #fff,
+    'menu': #000,
+    'contacts': #757575,
+    'baner': #fff,
+    'section-bg': #fff,
+    'text': #757575,
+    'label': #fff,
+    'label-bg': rgba(47, 48, 58, 0.8),
+    'team-bg': #f5f4fa,
+    'footer-bg': #2f303a,
+    'footer': #fff,
+    'adress-link': rgba(255, 255, 255, 0.6),
+    'footer-media-input': rgba(255, 255, 255, 0.6),
+    'portfolio-bg': #fff,
+    'photo-descrition': #757575,
+    'overlay': #fff,
+    'overlay-bg': rgba(33, 150, 243, 0.9),
+    'modal-bg': rgba(0, 0, 0, 0.2),
+    'modal-box-bg': #fff,
+    'services': #000,
+    'services-label': #757575,
+    'placeholder': #75757580,
+    'input': #000,
+    'input-icon': #000,
+);
+
+@function getcolor($key) {
+    @return map-get($colors, $key);
+}

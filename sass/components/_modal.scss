@@ -1,0 +1,157 @@
+.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.modal {
+    @include flex(center, center, none);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: getcolor('modal-bg');
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    &__box {
+        padding: 40px;
+        position: relative;
+        background-color: getcolor('modal-box-bg');
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        cursor: auto;
+    }
+
+    &__btn {
+        @include flex(center, center, none);
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: get-color('modal-box-bg');
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover,
+        &:focus {
+            background-color: #fd5c63;
+        }
+    }
+}
+
+.services {
+    &__container {
+        @include flex(none, none, 10px);
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-size: $services-font-size;
+        font-weight: $servies-font-weight;
+        line-height: $services-line-height;
+        text-align: center;
+        color: getcolor('services');
+    }
+    &__label {
+        position: relative;
+        font-size: $services-label-font-size;
+        line-height: $services-label-line-height;
+        color: getcolor('services-label');
+        &:focus-within .services__icon {
+            color: getcolor('backlight');
+        }
+    }
+    &__description {
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    &__icon {
+        fill: currentColor;
+        position: absolute;
+        color: getcolor('input-icon');
+        left: 15px;
+        top: 32px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__input {
+        @extend %input;
+        &:focus {
+            border-color: getcolor('backlight');
+            fill: getcolor('backlight');
+            color: getcolor('input');
+        }
+    }
+
+    &__comment {
+        @extend %input;
+        padding: 12px 16px;
+        resize: vertical;
+        min-height: 120px;
+        &::placeholder {
+            color: getcolor('placeholder');
+        }
+        &:focus {
+            border-color: getcolor('backlight');
+            fill: getcolor('backlight');
+            color: getcolor('input');
+        }
+    }
+    &__btn {
+        @extend %btn;
+        margin: 0 auto;
+        display: block;
+        padding: 10px 76px;
+        &:hover,
+        &:focus {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.rules {
+    @include flex(center, center, none);
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0 14px 0 38px;
+    &__label {
+        position: static;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+    &__link {
+        @extend %link;
+        &:hover,
+        &:focus {
+            color: getcolor('backlight');
+        }
+    }
+    &__icon {
+        position: absolute;
+        width: 16px;
+        height: 15px;
+        top: 4px;
+        left: 14px;
+        cursor: pointer;
+        &--check {
+            visibility: hidden;
+        }
+    }
+    &__input {
+        appearance: none;
+        &:checked ~ .rules__icon--check {
+            visibility: visible;
+        }
+        &:checked ~ .rules__icon--vector {
+            visibility: hidden;
+        }
+        &:not(:checked) ~ .rules__icon--vector {
+            visibility: visible;
+        }
+    }
+}

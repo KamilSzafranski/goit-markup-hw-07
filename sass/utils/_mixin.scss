@@ -1,0 +1,11 @@
+@mixin flex($justify, $algin, $gap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $algin;
+    gap: $gap;
+}
+
+@mixin section($scolor, $padding) {
+    padding: $padding 0;
+    background-color: getcolor('#{$scolor}');
+}

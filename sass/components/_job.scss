@@ -1,0 +1,25 @@
+.job {
+    &__title {
+        @extend %h2;
+    }
+    &__grid {
+        @include flex(space-around, none, none);
+        list-style: none;
+    }
+    &__item {
+        position: relative;
+    }
+    &__label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 27px 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: $label-font-weight;
+        line-height: 1.17;
+        color: getcolor('label');
+        background-color: getcolor('label-bg');
+    }
+}

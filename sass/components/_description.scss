@@ -1,0 +1,29 @@
+.description {
+    @include section(section-bg, 94px);
+    &__grid {
+        margin-bottom: 94px;
+        padding: 0 15px;
+        @include flex(space-around, none, none);
+        column-gap: 30px;
+        list-style: none;
+    }
+    &__container {
+        margin-bottom: 30px;
+        padding: 25px 0;
+        line-height: 0;
+        text-align: center;
+        background-color: #f5f4fa;
+        border-radius: 4px;
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-weight: $descritpion-title-font-weight;
+        font-size: $standard-font-size;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        color: getcolor('text');
+        line-height: $text-line-height;
+    }
+}
