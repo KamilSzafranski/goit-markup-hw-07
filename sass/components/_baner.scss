@@ -7,8 +7,8 @@
     text-transform: uppercase;
     text-align: center;
     background-repeat: no-repeat;
-    background-size: auto, 1600px;
-    background-position: 0%, 50% 50%;
+    background-size: 1600px, 1600px;
+    background-position: 50% 50%, 50% 50%;
     background-image: linear-gradient(to top, #2f303a66, #2f303a66), url(../images/header-bg.jpg);
     &__title {
         margin: 0 auto 30px;
